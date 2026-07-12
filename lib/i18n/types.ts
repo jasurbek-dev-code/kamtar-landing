@@ -14,6 +14,7 @@ export interface Dictionary {
     badge: string;
     titlePre: string;
     titleEm: string;
+    titlePost: string;
     ctaPrimary: string;
     ctaSecondary: string;
     socialProofStrong: string;
@@ -117,7 +118,10 @@ export interface Dictionary {
   pricingCalculator: {
     basePackage: string;
     baseIncluded: string;
-    roles: Record<"owner" | "admin" | "leader" | "seller" | "store", { label: string; desc: string }>;
+    roles: Record<
+      "owner" | "admin" | "leader" | "seller" | "store",
+      { label: string; desc: string }
+    >;
     monthlyTitle: string;
     basePlan: string;
     total: string;

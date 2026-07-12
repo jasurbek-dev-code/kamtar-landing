@@ -2,7 +2,8 @@ import type { Dictionary } from "./types";
 
 export const lat: Dictionary = {
   meta: {
-    title: "Kamatar ERP — Biznesingizni raqamlashtiring | Do'kon va Savdo Boshqaruv Dasturi",
+    title:
+      "Kamatar ERP — Biznesingizni raqamlashtiring | Do'kon va Savdo Boshqaruv Dasturi",
     description:
       "Savdo, ombor, moliya va mijozlar boshqaruvini bitta platformada. Kamatar ERP — O'zbekiston biznesi uchun ishlab chiqilgan zamonaviy ERP tizimi. Do'kon, magazin va tarmoqlar uchun kassa, ombor va CRM dasturi.",
     keywords: [
@@ -36,6 +37,7 @@ export const lat: Dictionary = {
     badge: "Yangi: Bo'lib to'lash moduli qo'shildi",
     titlePre: "Biznesingizni",
     titleEm: "to'liq",
+    titlePost: "raqamlashtiring",
     ctaPrimary: "Bepul sinab ko'rish",
     ctaSecondary: "Demo ko'rish",
     socialProofStrong: "500+",
@@ -103,7 +105,8 @@ export const lat: Dictionary = {
     badge: "Yechimlar",
     titlePre: "Hamma narsa bitta",
     titleEm: "platformada",
-    subtitle: "Kamatar ERP ning asosiy imkoniyatlari biznesingizning barcha jarayonlarini qamrab oladi.",
+    subtitle:
+      "Kamatar ERP ning asosiy imkoniyatlari biznesingizning barcha jarayonlarini qamrab oladi.",
     items: [
       {
         title: "Savdo boshqaruvi",
@@ -141,7 +144,8 @@ export const lat: Dictionary = {
     badge: "Qanday ishlaydi",
     titlePre: "Ishni boshlash",
     titleEm: "oson",
-    subtitle: "Kamatar ERP ga ulangan do'konlar o'rtacha 2 soat ichida to'liq ishlay boshlaydi.",
+    subtitle:
+      "Kamatar ERP ga ulangan do'konlar o'rtacha 2 soat ichida to'liq ishlay boshlaydi.",
     steps: [
       {
         title: "Ro'yxatdan o'ting",
@@ -183,14 +187,46 @@ export const lat: Dictionary = {
     titleEm: "modullari",
     subtitle: "Har bir modul mustaqil ishlaydi va bir-biriga ulangan.",
     items: [
-      { title: "Savdo", text: "Naqd va nasiya savdo, chek chiqarish, qaytarish", tag: "3 ta operatsiya" },
-      { title: "Bo'lib to'lash", text: "Muddatli to'lov jadvali, to'lov nazorati", tag: "Avtomatik eslatma" },
-      { title: "Ombor", text: "Tovar kirim-chiqim, zaxira nazorati, inventarizatsiya", tag: "Real vaqt" },
-      { title: "Moliya", text: "Kassa, bank, pul o'tkazma, valyuta", tag: "Ko'p valyuta" },
-      { title: "CRM", text: "Mijozlar bazasi, qarz nazorati, tarix", tag: "Cheksiz mijoz" },
-      { title: "Xizmat ko'rsatish", text: "Ustaxona, ta'mirlash, buyurtmalar boshqaruvi", tag: "Jarayon nazorati" },
-      { title: "Hisobotlar", text: "Savdo, foyda-zarar, mijoz faolligi, PDF export", tag: "20+ hisobot turi" },
-      { title: "Ko'p filial", text: "Bir nechta do'kon, ombor va filiallarni boshqarish", tag: "Cheksiz filial" },
+      {
+        title: "Savdo",
+        text: "Naqd va nasiya savdo, chek chiqarish, qaytarish",
+        tag: "3 ta operatsiya",
+      },
+      {
+        title: "Bo'lib to'lash",
+        text: "Muddatli to'lov jadvali, to'lov nazorati",
+        tag: "Avtomatik eslatma",
+      },
+      {
+        title: "Ombor",
+        text: "Tovar kirim-chiqim, zaxira nazorati, inventarizatsiya",
+        tag: "Real vaqt",
+      },
+      {
+        title: "Moliya",
+        text: "Kassa, bank, pul o'tkazma, valyuta",
+        tag: "Ko'p valyuta",
+      },
+      {
+        title: "CRM",
+        text: "Mijozlar bazasi, qarz nazorati, tarix",
+        tag: "Cheksiz mijoz",
+      },
+      {
+        title: "Xizmat ko'rsatish",
+        text: "Ustaxona, ta'mirlash, buyurtmalar boshqaruvi",
+        tag: "Jarayon nazorati",
+      },
+      {
+        title: "Hisobotlar",
+        text: "Savdo, foyda-zarar, mijoz faolligi, PDF export",
+        tag: "20+ hisobot turi",
+      },
+      {
+        title: "Ko'p filial",
+        text: "Bir nechta do'kon, ombor va filiallarni boshqarish",
+        tag: "Cheksiz filial",
+      },
     ],
   },
   pricing: {
@@ -245,7 +281,8 @@ export const lat: Dictionary = {
     ],
     calculator: {
       title: "Yoki o'z do'koningizni yarating",
-      subtitle: "Kerakli xodim va do'konlarni qo'shing — narx real vaqtda hisoblanadi.",
+      subtitle:
+        "Kerakli xodim va do'konlarni qo'shing — narx real vaqtda hisoblanadi.",
     },
   },
   pricingCalculator: {
@@ -293,7 +330,8 @@ export const lat: Dictionary = {
     titlePre: "Biznesingizni",
     titleEm: "bugundan",
     titlePost: "o'zgartiring",
-    subtitle: "14 kunlik bepul sinov. Kredit karta kerak emas. Istalgan vaqt bekor qilish mumkin.",
+    subtitle:
+      "14 kunlik bepul sinov. Kredit karta kerak emas. Istalgan vaqt bekor qilish mumkin.",
     namePlaceholder: "Ismingiz",
     nameRequired: "Ismingizni kiriting",
     phonePlaceholder: "+998 __ ___ __ __",
@@ -312,7 +350,12 @@ export const lat: Dictionary = {
     companyTitle: "Kompaniya",
     companyLinks: ["Biz haqimizda", "Blog", "Hamkorlar", "Karyera"],
     contactTitle: "Aloqa",
-    contactLinks: ["+998 71 123-45-67", "info@kamatar.uz", "Toshkent, O'zbekiston", "Qo'llab-quvvatlash"],
+    contactLinks: [
+      "+998 71 123-45-67",
+      "info@kamatar.uz",
+      "Toshkent, O'zbekiston",
+      "Qo'llab-quvvatlash",
+    ],
     copyright: "© 2026 Kamatar ERP. Barcha huquqlar himoyalangan.",
   },
 };
