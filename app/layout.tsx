@@ -13,7 +13,7 @@ const manrope = Manrope({
 });
 
 // TODO: change to your real production domain before deploying.
-const SITE_URL = "https://kamatar.uz";
+const SITE_URL = "https://kamtar-landing.vercel.app";
 
 // SEO note: the site's UI language is switched client-side (lotin/kirill), so search
 // engines primarily index the server-rendered (lotin) version. To maximise discovery for
@@ -58,6 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: lat.meta.title,
     description: lat.meta.description,
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
