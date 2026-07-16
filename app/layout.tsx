@@ -13,7 +13,7 @@ const manrope = Manrope({
 });
 
 // TODO: change to your real production domain before deploying.
-const SITE_URL = "https://kamtar-landing.vercel.app";
+const SITE_URL = "https://kamtar.uz";
 
 // SEO note: the site's UI language is switched client-side (lotin/kirill), so search
 // engines primarily index the server-rendered (lotin) version. To maximise discovery for
