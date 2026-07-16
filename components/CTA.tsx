@@ -5,26 +5,72 @@ import Reveal from "./Reveal";
 import { ArrowRightIcon } from "./icons";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
+// API talabiga ko'ra maydon nomlari: name, phone va org
 type FormValues = {
   name: string;
   phone: string;
-  storeName: string;
+  org: string;
+};
+
+// Xabarlar obyektining kalitlarini context'dagi "lat" va "cyr" turlariga moslashtiramiz
+const messages = {
+  lat: {
+    success: "Muvaffaqiyatli! Ma'lumotlaringiz qabul qilindi.",
+    validationError:
+      "Xatolik: Iltimos, barcha maydonlar to'g'ri to'ldirilganini tekshiring.",
+    networkError: "Tarmoq ulanishida xatolik yuz berdi.",
+    sending: "Yuborilmoqda...",
+  },
+  cyr: {
+    success: "Муваффақиятли! Маълумотларингиз қабул қилинди.",
+    validationError:
+      "Хатолик: Илтимос, барча майдонлар тўғри тўлдирилганини теширинг.",
+    networkError: "Тармоқ уланишида хатолик юз берди.",
+    sending: "Юборилмоқда...",
+  },
 };
 
 export default function CTA() {
-  const { dict } = useLanguage();
+  // Context'dan kelayotgan 'lang' faqat "lat" yoki "cyr" bo'lishi mumkin
+  const { dict, lang } = useLanguage();
   const c = dict.cta;
+
+  // TypeScript endi tinchiydi, chunki lang faqat "lat" | "cyr" va messages'da bu kalitlar bor
+  const activeMessages = messages[lang];
 
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
   } = useForm<FormValues>();
 
-  const onSubmit = (data: FormValues) => {
-    console.log("Lead submitted:", data);
-    reset();
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const response = await fetch(
+        "https://usta.kamtar.uz/api/landing/submit",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        },
+      );
+
+      if (response.ok) {
+        console.log("Lead muvaffaqiyatli yuborildi:", data);
+        alert(activeMessages.success);
+        reset();
+      } else {
+        const errorData = await response.json();
+        console.error("Validatsiya xatoligi:", errorData);
+        alert(activeMessages.validationError);
+      }
+    } catch (error) {
+      console.error("Tarmoq xatosi yuz berdi:", error);
+      alert(activeMessages.networkError);
+    }
   };
 
   return (
@@ -36,9 +82,12 @@ export default function CTA() {
 
       <Reveal className="relative z-[1] max-w-[800px] mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-[52px] font-black text-white tracking-tight leading-[1.15] mb-5 text-balance">
-          {c.titlePre} <em className="not-italic text-teal">{c.titleEm}</em> {c.titlePost}
+          {c.titlePre} <em className="not-italic text-teal">{c.titleEm}</em>{" "}
+          {c.titlePost}
         </h2>
-        <p className="text-base sm:text-lg text-white/60 mb-10 leading-[1.65]">{c.subtitle}</p>
+        <p className="text-base sm:text-lg text-white/60 mb-10 leading-[1.65]">
+          {c.subtitle}
+        </p>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
@@ -46,6 +95,7 @@ export default function CTA() {
           className="bg-white/[.06] border border-white/10 rounded-[20px] p-6 sm:p-9 max-w-[560px] mx-auto text-left"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-3.5">
+            {/* Name input */}
             <div>
               <input
                 {...register("name", { required: c.nameRequired })}
@@ -53,8 +103,14 @@ export default function CTA() {
                 placeholder={c.namePlaceholder}
                 className="w-full bg-white/[.08] border-[1.5px] border-white/[.12] rounded-[11px] px-[18px] py-3.5 text-[15px] text-white placeholder:text-white/35 outline-none transition-colors focus:border-teal"
               />
-              {errors.name && <p className="text-red-bright text-xs mt-1.5">{errors.name.message}</p>}
+              {errors.name && (
+                <p className="text-red-bright text-xs mt-1.5">
+                  {errors.name.message}
+                </p>
+              )}
             </div>
+
+            {/* Phone input */}
             <div>
               <input
                 {...register("phone", { required: c.phoneRequired })}
@@ -62,24 +118,39 @@ export default function CTA() {
                 placeholder={c.phonePlaceholder}
                 className="w-full bg-white/[.08] border-[1.5px] border-white/[.12] rounded-[11px] px-[18px] py-3.5 text-[15px] text-white placeholder:text-white/35 outline-none transition-colors focus:border-teal"
               />
-              {errors.phone && <p className="text-red-bright text-xs mt-1.5">{errors.phone.message}</p>}
+              {errors.phone && (
+                <p className="text-red-bright text-xs mt-1.5">
+                  {errors.phone.message}
+                </p>
+              )}
             </div>
           </div>
-          <input
-            {...register("storeName", { required: c.storeRequired })}
-            type="text"
-            placeholder={c.storePlaceholder}
-            className="w-full bg-white/[.08] border-[1.5px] border-white/[.12] rounded-[11px] px-[18px] py-3.5 text-[15px] text-white placeholder:text-white/35 outline-none transition-colors focus:border-teal mb-3.5"
-          />
-          {errors.storeName && <p className="text-red-bright text-xs -mt-2.5 mb-3.5">{errors.storeName.message}</p>}
 
+          {/* Org (Tashkilot/Do'kon) input */}
+          <div className="mb-3.5">
+            <input
+              {...register("org", { required: c.storeRequired })}
+              type="text"
+              placeholder={c.storePlaceholder}
+              className="w-full bg-white/[.08] border-[1.5px] border-white/[.12] rounded-[11px] px-[18px] py-3.5 text-[15px] text-white placeholder:text-white/35 outline-none transition-colors focus:border-teal"
+            />
+            {errors.org && (
+              <p className="text-red-bright text-xs mt-1.5">
+                {errors.org.message}
+              </p>
+            )}
+          </div>
+
+          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-4 bg-teal text-white rounded-xl text-base font-bold flex items-center justify-center gap-2.5 transition-colors hover:bg-teal-700"
+            disabled={isSubmitting}
+            className="w-full py-4 bg-teal text-white rounded-xl text-base font-bold flex items-center justify-center gap-2.5 transition-colors hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {c.submit}
+            {isSubmitting ? activeMessages.sending : c.submit}
             <ArrowRightIcon className="w-[18px] h-[18px]" />
           </button>
+
           <p className="mt-3.5 text-[13px] text-white/35 text-center">
             {isSubmitSuccessful ? c.successMessage : c.helperMessage}
           </p>

@@ -25,8 +25,8 @@ export const lat: Dictionary = {
     links: [
       { href: "#features", label: "Imkoniyatlar" },
       { href: "#modules", label: "Modullar" },
-      { href: "#pricing", label: "Narxlar" },
-      { href: "#testimonials", label: "Mijozlar" },
+      // { href: "#pricing", label: "Narxlar" },
+      // { href: "#testimonials", label: "Mijozlar" },
       { href: "#contact", label: "Aloqa" },
     ],
     login: "Kirish",
@@ -40,7 +40,7 @@ export const lat: Dictionary = {
     titlePost: "raqamlashtiring",
     ctaPrimary: "Bepul sinab ko'rish",
     ctaSecondary: "Demo ko'rish",
-    socialProofStrong: "500+",
+    socialProofStrong: "50+",
     socialProofText: "ishonchli mijoz bizni tanladi",
     subtitle:
       "Savdo, ombor, moliya va mijozlar boshqaruvini bitta platformada. Kamatar ERP — O'zbekiston biznes uchun ishlab chiqilgan.",
@@ -62,8 +62,8 @@ export const lat: Dictionary = {
   },
   stats: {
     items: [
-      { num: "500", suffix: "+", label: "Faol mijozlar" },
-      { num: "12", suffix: "M+", label: "Kunlik tranzaksiyalar" },
+      { num: "50", suffix: "+", label: "Faol mijozlar" },
+      { num: "1", suffix: "M+", label: "Kunlik tranzaksiyalar" },
       { num: "99", suffix: ".9%", label: "Uptime kafolati" },
       { num: "24", suffix: "/7", label: "Texnik qo'llab-quvvatlash" },
     ],
@@ -338,7 +338,7 @@ export const lat: Dictionary = {
     phoneRequired: "Telefon raqamingizni kiriting",
     storePlaceholder: "Do'kon nomi",
     storeRequired: "Do'kon nomini kiriting",
-    submit: "Bepul sinashni boshlash",
+    submit: "Yuborish",
     successMessage: "Rahmat! Tez orada bog'lanamiz.",
     helperMessage: "Yuboring — mutaxassisimiz 30 daqiqa ichida bog'lanadi",
   },
@@ -346,7 +346,7 @@ export const lat: Dictionary = {
     description:
       "O'zbekiston biznesi uchun ishlab chiqilgan to'liq ERP tizimi. Savdo, ombor, moliya — barchasi bir joyda.",
     productTitle: "Mahsulot",
-    productLinks: ["Imkoniyatlar", "Modullar", "Narxlar", "Yangiliklar"],
+    productLinks: ["Imkoniyatlar", "Modullar", "Yangiliklar"],
     companyTitle: "Kompaniya",
     companyLinks: ["Biz haqimizda", "Blog", "Hamkorlar", "Karyera"],
     contactTitle: "Aloqa",

@@ -20,8 +20,8 @@ export default function Home() {
       <Features />
       <HowItWorks />
       <Modules />
-      <Pricing />
-      <Testimonials />
+      {/* <Pricing /> */}
+      {/* <Testimonials /> */}
       <CTA />
       <Footer />
     </main>

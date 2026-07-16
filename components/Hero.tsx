@@ -36,7 +36,7 @@ export default function Hero() {
           <p className="text-base sm:text-lg text-white/65 leading-[1.7] mb-10 max-w-[480px]">
             {h.subtitle}
           </p>
-          <div className="flex flex-wrap gap-3.5">
+          {/* <div className="flex flex-wrap gap-3.5">
             <button className="inline-flex items-center gap-2.5 bg-teal text-white text-[15px] sm:text-base font-bold px-7 sm:px-[34px] py-4 rounded-[13px] shadow-[0_8px_28px_rgba(39,179,155,.35)] transition-all hover:bg-teal-700 hover:-translate-y-0.5">
               {h.ctaPrimary}
               <ArrowRightIcon className="w-[18px] h-[18px]" />
@@ -45,7 +45,7 @@ export default function Hero() {
               <PlayIcon className="w-[18px] h-[18px]" />
               {h.ctaSecondary}
             </button>
-          </div>
+          </div> */}
           <div className="flex items-center gap-4 mt-8">
             <div className="flex">
               {[0, 1, 2].map((i) => (

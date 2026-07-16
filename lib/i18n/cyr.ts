@@ -25,8 +25,8 @@ export const cyr: Dictionary = {
     links: [
       { href: "#features", label: "Имкониятлар" },
       { href: "#modules", label: "Модуллар" },
-      { href: "#pricing", label: "Нархлар" },
-      { href: "#testimonials", label: "Мижозлар" },
+      // { href: "#pricing", label: "Нархлар" },
+      // { href: "#testimonials", label: "Мижозлар" },
       { href: "#contact", label: "Алоқа" },
     ],
     login: "Кириш",
@@ -41,7 +41,7 @@ export const cyr: Dictionary = {
 
     ctaPrimary: "Бепул синаб кўриш",
     ctaSecondary: "Демо кўриш",
-    socialProofStrong: "500+",
+    socialProofStrong: "50+",
     socialProofText: "ишончли мижоз бизни танлади",
     subtitle:
       "Савдо, омбор, молия ва мижозлар бошқарувини битта платформада. Каматар ЕРП — Ўзбекистон бизнеси учун ишлаб чиқилган.",
@@ -63,8 +63,8 @@ export const cyr: Dictionary = {
   },
   stats: {
     items: [
-      { num: "500", suffix: "+", label: "Фаол мижозлар" },
-      { num: "12", suffix: "M+", label: "Кунлик транзакциялар" },
+      { num: "50", suffix: "+", label: "Фаол мижозлар" },
+      { num: "1", suffix: "M+", label: "Кунлик транзакциялар" },
       { num: "99", suffix: ".9%", label: "Uptime кафолати" },
       { num: "24", suffix: "/7", label: "Техник қўллаб-қувватлаш" },
     ],
@@ -339,7 +339,7 @@ export const cyr: Dictionary = {
     phoneRequired: "Телефон рақамингизни киритинг",
     storePlaceholder: "Дўкон номи",
     storeRequired: "Дўкон номини киритинг",
-    submit: "Бепул синашни бошлаш",
+    submit: "Юбориш",
     successMessage: "Раҳмат! Тез орада боғланамиз.",
     helperMessage: "Юборинг — мутахассисимиз 30 дақиқа ичида боғланади",
   },
@@ -347,7 +347,7 @@ export const cyr: Dictionary = {
     description:
       "Ўзбекистон бизнеси учун ишлаб чиқилган тўлиқ ЕРП тизими. Савдо, омбор, молия — барчаси бир жойда.",
     productTitle: "Маҳсулот",
-    productLinks: ["Имкониятлар", "Модуллар", "Нархлар", "Янгиликлар"],
+    productLinks: ["Имкониятлар", "Модуллар", "Янгиликлар"],
     companyTitle: "Компания",
     companyLinks: ["Биз ҳақимизда", "Блог", "Ҳамкорлар", "Карьера"],
     contactTitle: "Алоқа",
