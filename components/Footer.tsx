@@ -16,7 +16,7 @@ export default function Footer() {
               <span className="w-9 h-9 rounded-[10px] bg-teal grid place-items-center">
                 <LogoMarkIcon className="w-5 h-5 text-white" />
               </span>
-              Kamatar ERP
+              Kamtar ERP
             </div>
             <p className="text-[14.5px] text-white/40 leading-[1.7] max-w-[280px]">
               {f.description}

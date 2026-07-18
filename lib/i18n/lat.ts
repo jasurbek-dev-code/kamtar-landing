@@ -3,9 +3,9 @@ import type { Dictionary } from "./types";
 export const lat: Dictionary = {
   meta: {
     title:
-      "Kamatar ERP — Biznesingizni raqamlashtiring | Do'kon va Savdo Boshqaruv Dasturi",
+      "Kamtar ERP — Biznesingizni raqamlashtiring | Do'kon va Savdo Boshqaruv Dasturi",
     description:
-      "Savdo, ombor, moliya va mijozlar boshqaruvini bitta platformada. Kamatar ERP — O'zbekiston biznesi uchun ishlab chiqilgan zamonaviy ERP tizimi. Do'kon, magazin va tarmoqlar uchun kassa, ombor va CRM dasturi.",
+      "Savdo, ombor, moliya va mijozlar boshqaruvi bitta platformada. Kamtar ERP — O'zbekiston biznesi uchun ishlab chiqilgan zamonaviy ERP tizimi. Do'kon, magazin va tarmoqlar uchun kassa, ombor va CRM dasturi.",
     keywords: [
       "ERP dastur",
       "savdo dasturi",
@@ -18,7 +18,7 @@ export const lat: Dictionary = {
       "bo'lib to'lash dasturi",
       "magazin uchun dastur",
       "savdo hisobi dasturi",
-      "Kamatar ERP",
+      "Kamtar ERP",
     ],
   },
   nav: {
@@ -43,7 +43,7 @@ export const lat: Dictionary = {
     socialProofStrong: "50+",
     socialProofText: "ishonchli mijoz bizni tanladi",
     subtitle:
-      "Savdo, ombor, moliya va mijozlar boshqaruvini bitta platformada. Kamatar ERP — O'zbekiston biznes uchun ishlab chiqilgan.",
+      "Savdo, ombor, moliya va mijozlar boshqaruvi bitta platformada. Kamtar ERP — O'zbekiston biznesi uchun ishlab chiqilgan.",
     panel: {
       storeName: "Asosiy Do'kon",
       tabs: ["Bosh sahifa", "Savdo", "Ombor", "Moliya", "Hisobot"],
@@ -106,7 +106,7 @@ export const lat: Dictionary = {
     titlePre: "Hamma narsa bitta",
     titleEm: "platformada",
     subtitle:
-      "Kamatar ERP ning asosiy imkoniyatlari biznesingizning barcha jarayonlarini qamrab oladi.",
+      "Kamtar ERP ning asosiy imkoniyatlari biznesingizning barcha jarayonlarini qamrab oladi.",
     items: [
       {
         title: "Savdo boshqaruvi",
@@ -145,7 +145,7 @@ export const lat: Dictionary = {
     titlePre: "Ishni boshlash",
     titleEm: "oson",
     subtitle:
-      "Kamatar ERP ga ulangan do'konlar o'rtacha 2 soat ichida to'liq ishlay boshlaydi.",
+      "Kamtar ERP ga ulangan do'konlar o'rtacha 2 soat ichida to'liq ishlay boshlaydi.",
     steps: [
       {
         title: "Ro'yxatdan o'ting",
@@ -183,7 +183,7 @@ export const lat: Dictionary = {
   },
   modules: {
     badge: "Modullar",
-    titlePre: "Kamatar ERP",
+    titlePre: "Kamtar ERP",
     titleEm: "modullari",
     subtitle: "Har bir modul mustaqil ishlaydi va bir-biriga ulangan.",
     items: [
@@ -308,7 +308,7 @@ export const lat: Dictionary = {
     items: [
       {
         quote:
-          "\u201CKamatar ERP dan oldin har oyning oxirida hisob qilish 3 kun olardi. Endi real vaqtda ko'raman. Savdom 30% o'sdi.\u201D",
+          "\u201CKamtar ERP dan oldin har oyning oxirida hisob qilish 3 kun olardi. Endi real vaqtda ko'raman. Savdom 30% o'sdi.\u201D",
         name: "Bobur Toshmatov",
         role: "Elektronika do'koni egasi, Toshkent",
       },
@@ -352,10 +352,10 @@ export const lat: Dictionary = {
     contactTitle: "Aloqa",
     contactLinks: [
       "+998 71 123-45-67",
-      "info@kamatar.uz",
+      "info@kamtar.uz",
       "Toshkent, O'zbekiston",
       "Qo'llab-quvvatlash",
     ],
-    copyright: "© 2026 Kamatar ERP. Barcha huquqlar himoyalangan.",
+    copyright: "© 2026 Kamtar ERP. Barcha huquqlar himoyalangan.",
   },
 };

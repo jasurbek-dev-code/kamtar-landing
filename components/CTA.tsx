@@ -1,10 +1,10 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import Reveal from "./Reveal";
 import { ArrowRightIcon } from "./icons";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
-
+import InputMask from "react-input-mask";
 // API talabiga ko'ra maydon nomlari: name, phone va org
 type FormValues = {
   name: string;
@@ -40,19 +40,23 @@ export default function CTA() {
 
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
   } = useForm<FormValues>();
 
   const onSubmit = async (data: FormValues) => {
+    const cleanedData = {
+      ...data,
+      phone: data.phone.replace(/\s/g, ""), // Barcha bo'shliqlarni olib tashlaymiz: +998 97 206 10 20 -> +998972061020
+    };
+
     try {
       const response = await fetch("https://kamtar.uz/api/landing/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cleanedData),
       });
 
       if (response.ok) {
@@ -106,14 +110,32 @@ export default function CTA() {
                 </p>
               )}
             </div>
-
-            {/* Phone input */}
             <div>
-              <input
-                {...register("phone", { required: c.phoneRequired })}
-                type="tel"
-                placeholder={c.phonePlaceholder}
-                className="w-full bg-white/[.08] border-[1.5px] border-white/[.12] rounded-[11px] px-[18px] py-3.5 text-[15px] text-white placeholder:text-white/35 outline-none transition-colors focus:border-teal"
+              <Controller
+                name="phone"
+                control={control}
+                rules={{ required: c.phoneRequired }}
+                render={({ field: { onChange, value } }) => (
+                  <InputMask
+                    mask="+998 99 999 99 99"
+                    // Bu yerda formatChars maskadagi belgilar nimani anglatishini belgilaydi
+                    formatChars={{
+                      "9": "[0-9]",
+                    }}
+                    maskChar="_"
+                    value={value || ""}
+                    onChange={onChange}
+                    placeholder="+998 00 000 00 00"
+                  >
+                    {(inputProps: any) => (
+                      <input
+                        {...inputProps}
+                        type="tel"
+                        className="w-full bg-white/[.08] border-[1.5px] border-white/[.12] rounded-[11px] px-[18px] py-3.5 text-[15px] text-white placeholder:text-white/35 outline-none transition-colors focus:border-teal"
+                      />
+                    )}
+                  </InputMask>
+                )}
               />
               {errors.phone && (
                 <p className="text-red-bright text-xs mt-1.5">

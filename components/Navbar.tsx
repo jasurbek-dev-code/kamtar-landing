@@ -17,8 +17,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // O'tish kerak bo'lgan tizim linki (masalan, app.kamatar.uz yoki boshqa url)
-  const LOGIN_URL = "https://erp.kamatar.uz";
+  // O'tish kerak bo'lgan tizim linki (masalan, app.kamtar.uz yoki boshqa url)
+  const LOGIN_URL = "https://erp.kamtar.uz";
 
   return (
     <nav
@@ -33,7 +33,7 @@ export default function Navbar() {
         <span className="w-9 h-9 rounded-[10px] bg-teal grid place-items-center">
           <LogoMarkIcon className="w-5 h-5 text-white" />
         </span>
-        Kamatar ERP
+        Kamtar ERP
       </a>
 
       <div className="hidden lg:flex gap-1">

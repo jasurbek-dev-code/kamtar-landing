@@ -1,6 +1,6 @@
-# Kamatar ERP — Landing Page
+# Kamtar ERP — Landing Page
 
-Next.js (App Router) + TypeScript + Tailwind CSS conversion of the Kamatar ERP
+Next.js (App Router) + TypeScript + Tailwind CSS conversion of the Kamtar ERP
 vizitka sayt, fully responsive (mobile → desktop).
 
 ## Ishga tushirish
@@ -41,7 +41,7 @@ components/
 - Ranglar `tailwind.config.ts`da asl dizayndagi CSS o'zgaruvchilariga mos
   qilib qo'shilgan (`green-nav`, `teal`, `red`, `ink`, va h.k.).
 - "Sinab ko'rish" / "Bepul boshlash" tugmalarini asosiy tizim domenига
-  (masalan `app.kamatar.uz`) yo'naltirish uchun ularni `<a href="...">`
+  (masalan `app.kamtar.uz`) yo'naltirish uchun ularni `<a href="...">`
   yoki `next/link`ga almashtiring.
 - Kalkulyator va forma holatlari faqat frontendda ishlaydi — CTA formasini
   haqiqiy backend/CRM'ga ulash uchun `components/CTA.tsx` ichidagi

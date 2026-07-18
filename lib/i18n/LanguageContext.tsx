@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import { lat } from "./lat";
 import { cyr } from "./cyr";
 import type { Dictionary } from "./types";
@@ -9,7 +16,7 @@ export type Lang = "lat" | "cyr";
 
 const dictionaries: Record<Lang, Dictionary> = { lat, cyr };
 
-const STORAGE_KEY = "kamatar-lang";
+const STORAGE_KEY = "kamtar-lang";
 
 interface LanguageContextValue {
   lang: Lang;
@@ -17,7 +24,9 @@ interface LanguageContextValue {
   setLang: (lang: Lang) => void;
 }
 
-const LanguageContext = createContext<LanguageContextValue | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextValue | undefined>(
+  undefined,
+);
 
 function applyHtmlLang(lang: Lang) {
   if (typeof document !== "undefined") {
@@ -60,10 +69,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo<LanguageContextValue>(
     () => ({ lang, dict: dictionaries[lang], setLang }),
-    [lang]
+    [lang],
   );
 
-  return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+  return (
+    <LanguageContext.Provider value={value}>
+      {children}
+    </LanguageContext.Provider>
+  );
 }
 
 export function useLanguage() {
