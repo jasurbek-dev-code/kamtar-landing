@@ -47,16 +47,13 @@ export default function CTA() {
 
   const onSubmit = async (data: FormValues) => {
     try {
-      const response = await fetch(
-        "https://usta.kamtar.uz/api/landing/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
+      const response = await fetch("https://kamtar.uz/api/landing/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
         console.log("Lead muvaffaqiyatli yuborildi:", data);
