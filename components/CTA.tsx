@@ -119,9 +119,7 @@ export default function CTA() {
                   <InputMask
                     mask="+998 99 999 99 99"
                     // Bu yerda formatChars maskadagi belgilar nimani anglatishini belgilaydi
-                    formatChars={{
-                      "9": "[0-9]",
-                    }}
+
                     maskChar="_"
                     value={value || ""}
                     onChange={onChange}
